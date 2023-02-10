@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.ui.Modifier
 import com.example.playlistmakercompose.screens.MainScreen
+import com.example.playlistmakercompose.screens.SettingScreen
 import com.example.playlistmakercompose.ui.theme.PlayListMakerComposeTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,6 +21,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colors.background
                 ) {
                     MainScreen()
+                    //SettingScreen()
                 }
             }
         }
