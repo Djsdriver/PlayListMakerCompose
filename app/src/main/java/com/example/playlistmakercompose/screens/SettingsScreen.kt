@@ -21,12 +21,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.playlistmakercompose.R
+import com.example.playlistmakercompose.routes.Routes
 
 
 @Composable
-@Preview(showBackground = true)
-fun SettingScreen(){
+//@Preview(showBackground = true)
+fun SettingScreen(navController: NavController){
     Scaffold(
         topBar = {
             TopAppBar(
@@ -34,7 +36,7 @@ fun SettingScreen(){
                     Text(text = "Настройки", color = Color.Black)
                 },
                 navigationIcon = {
-                    IconButton(onClick = {/* обработчик*/}) {
+                    IconButton(onClick = {navController.navigate(route = Routes.MainScreen.route)}) {
                         Icon(painter = painterResource(id = R.drawable.ic_arrow_back),
                             "backIcon", tint = Color.Black)
                     }

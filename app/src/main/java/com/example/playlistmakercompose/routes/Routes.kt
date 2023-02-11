@@ -4,4 +4,6 @@ package com.example.playlistmakercompose.routes
 sealed class Routes(val route: String) {
     object MainScreen : Routes("main_screen")
     object SettingScreen : Routes("setting_screen")
+    object MediaScreen : Routes("media_screen")
+    object SearchScreen : Routes("search_screen")
 }

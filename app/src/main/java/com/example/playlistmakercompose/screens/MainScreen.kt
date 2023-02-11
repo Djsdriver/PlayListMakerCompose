@@ -15,22 +15,24 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.playlistmakercompose.MainActivity
 import com.example.playlistmakercompose.R
+import com.example.playlistmakercompose.routes.Routes
 
 
 @Composable
-@Preview(showBackground = true)
-fun MainScreen() {
+fun MainScreen(navController: NavController) {
         Column(
                 modifier = Modifier
                         .fillMaxSize()
-                        .background(Color.Blue)
+                        .background(Color(0xFF3772E7))
                         .padding(16.dp)
         ) {
-                Text(text = "PlayList Maker", modifier = Modifier.padding(bottom = 16.dp))
+                Text(text = "PlayList Maker", modifier = Modifier.padding(bottom = 16.dp), fontSize = 16.sp)
 
                 Button(
-                        onClick = { /*TODO*/ },
+                        onClick = { navController.navigate(route = Routes.SearchScreen.route) },
                         modifier = Modifier
                                 .fillMaxWidth()
                                 .weight(1f)
@@ -52,7 +54,7 @@ fun MainScreen() {
                 }
 //button media
                 Button(
-                        onClick = { /*TODO*/ },
+                        onClick = { navController.navigate(route = Routes.MediaScreen.route) },
                         modifier = Modifier
                                 .fillMaxWidth()
                                 .weight(1f)
@@ -75,7 +77,7 @@ fun MainScreen() {
 
                 //button setting
                 Button(
-                        onClick = { /*TODO*/ },
+                        onClick = { navController.navigate(route = Routes.SettingScreen.route) },
                         modifier = Modifier
                                 .fillMaxWidth()
                                 .weight(1f)
@@ -97,4 +99,10 @@ fun MainScreen() {
                 }
 
         }
+}
+
+@Composable
+@Preview(showBackground = true)
+fun PreviewMainScreen(){
+
 }
